@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 96%; /* Light Lavender Gray #F5F7FA */
+    --foreground: 225 15% 25%; /* Dark Slate Blue #3A4B68 */
+
+    --card: 220 20% 100%; /* White #FFFFFF */
+    --card-foreground: 225 15% 25%; /* Dark Slate Blue */
+
+    --popover: 220 20% 100%; /* White */
+    --popover-foreground: 225 15% 25%; /* Dark Slate Blue */
+
+    /* Primary: Deep Teal */
+    --primary: 180 60% 35%; /* #238C8C - Adjusted for better harmony */
+    --primary-foreground: 180 60% 95%; /* Light Teal for text on primary */
+
+    /* Secondary: Warm Coral */
+    --secondary: 15 90% 60%; /* #FC6A4D - Adjusted for vibrancy */
+    --secondary-foreground: 15 90% 15%; /* Dark Coral for text on secondary */
+
+    --muted: 220 15% 88%; /* Lighter Gray #DDE1E6 */
+    --muted-foreground: 220 10% 55%; /* Medium Gray #828C99 */
+
+    /* Accent: Bright Amber/Gold */
+    --accent: 35 95% 55%; /* #FFB82B - Adjusted for pop */
+    --accent-foreground: 35 95% 10%; /* Dark Amber for text on accent */
+
+    --destructive: 0 75% 55%; /* #E64545 - Softer Red */
+    --destructive-foreground: 0 75% 95%; /* Light Red for text on destructive */
+
+    --border: 220 15% 80%; /* Soft Gray Border #C8CDD4 */
+    --input: 220 15% 80%; /* Soft Gray Input Border */
+    --ring: 180 60% 45%; /* Slightly brighter Teal for focus rings */
+
+    --radius: 0.75rem; /* Slightly larger radius for a softer look */
+  }
+
+  .dark {
+    --background: 225 15% 15%; /* Darker Slate Blue */
+    --foreground: 220 20% 90%; /* Light Lavender Gray */
+
+    --card: 225 15% 20%; /* Dark Slate Blue (slightly lighter than bg) */
+    --card-foreground: 220 20% 90%; /* Light Lavender Gray */
+
+    --popover: 225 15% 18%; 
+    --popover-foreground: 220 20% 90%;
+
+    --primary: 180 60% 45%; /* Brighter Teal for dark mode */
+    --primary-foreground: 180 60% 95%;
+
+    --secondary: 15 90% 65%; /* Brighter Coral for dark mode */
+    --secondary-foreground: 15 90% 15%;
+
+    --muted: 225 10% 30%;
+    --muted-foreground: 220 10% 65%;
+
+    --accent: 35 95% 60%; /* Brighter Amber for dark mode */
+    --accent-foreground: 35 95% 10%;
+
+    --destructive: 0 75% 60%; /* Brighter Red for dark mode */
+    --destructive-foreground: 0 75% 95%;
+
+    --border: 225 10% 35%;
+    --input: 225 10% 35%;
+    --ring: 180 60% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .glassmorphism-card {
+    @apply bg-card/70 backdrop-blur-md border border-card/20 shadow-xl;
+  }
+  .neumorphism-button {
+    @apply shadow-[5px_5px_10px_#bababa,-5px_-5px_10px_#ffffff] hover:shadow-[2px_2px_5px_#bababa,-2px_-2px_5px_#ffffff] active:shadow-[inset_2px_2px_5px_#bababa,inset_-2px_-2px_5px_#ffffff] transition-shadow;
+  }
+  .dark .neumorphism-button {
+     @apply shadow-[5px_5px_10px_#1e293b,-5px_-5px_10px_#3e4c5b] hover:shadow-[2px_2px_5px_#1e293b,-2px_-2px_5px_#3e4c5b] active:shadow-[inset_2px_2px_5px_#1e293b,inset_-2px_-2px_5px_#3e4c5b];
+  }
+}
